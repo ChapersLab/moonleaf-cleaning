@@ -7,7 +7,8 @@
 
   <title>Moonleaf Cleaning | Professional House Cleaning Services</title>
 
-  <meta name="description" content="Moonleaf Cleaning provides reliable and eco-friendly house cleaning services for homes and apartments.">
+  <meta name="description"
+    content="Moonleaf Cleaning provides reliable and eco-friendly house cleaning services for homes and apartments.">
   <meta name="keywords" content="house cleaning, cleaning services, home cleaning, Moonleaf Cleaning">
 
   <meta name="author" content="Moonleaf Cleaning">
@@ -27,7 +28,54 @@
 </head>
 
 <body>
-    
-    
+
+<!-- =========================
+     NAVBAR – MOONLEAF CLEANING
+========================= -->
+<header class="site-header">
+  <nav class="navbar" id="navbar">
+    <div class="navbar__container">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Moonleaf Cleaning - Home">
+        <img src="img/moonleaf-cleaning-nobg.png" alt="Moonleaf Cleaning logo">
+      </a>
+
+      <!-- Toggle (hamburger → X) -->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Cleaning Services</a></li>
+          <li><a href="#details">Service Details</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact" class="btn-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </nav>
+</header>
+
+<!-- Overlay -->
+<div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+
+
+
+  <script src="main.js"></script>
 </body>
+
 </html>

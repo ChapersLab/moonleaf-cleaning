@@ -189,3 +189,156 @@ small {
   padding: 0 1rem;
   margin: 0 auto;
 }
+
+/* =========================
+   NAVBAR – MOONLEAF CLEANING
+========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Base navbar */
+.navbar {
+  background-color: #4d316c;
+}
+
+/* Container */
+.navbar__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar__logo img {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
+/* Desktop menu */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.25s ease;
+}
+
+.nav-menu a:hover {
+  opacity: 0.85;
+}
+
+/* CTA */
+.btn-cta {
+  background-color: #705a89;
+  padding: 0.55rem 1.1rem;
+  border-radius: 6px;
+}
+
+/* =========================
+   HAMBURGER BUTTON
+========================= */
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: scale(0.7);
+  width: 44px;
+  height: 44px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-toggle .bar {
+  width: 32px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+/* X animation */
+.nav-toggle.open .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.nav-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 900;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background-color: #4d316c;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+}
