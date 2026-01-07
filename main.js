@@ -66,4 +66,4 @@ function showNextText() {
 
 // Inicia animación
 showNextText();
-setInterval(showNextText, 3500);
+setInterval(showNextText, 4750);
