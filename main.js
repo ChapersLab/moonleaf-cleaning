@@ -31,3 +31,39 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.setAttribute("aria-expanded", "false");
   }
 });
+
+// ==============================
+// Navbar – marcar item activo al click
+// ==============================
+const navLinks = document.querySelectorAll('.nav-menu a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // quitar clase active de todos
+    navLinks.forEach(l => l.classList.remove('active'));
+
+    // agregar clase active al que se clickeó
+    link.classList.add('active');
+  });
+});
+
+
+// Animación secuencial de h3 en HERO
+const animatedTexts = document.querySelectorAll(".hero-animated-text h3");
+let index = 0;
+
+function showNextText() {
+  animatedTexts.forEach((el, i) => {
+    el.style.transform = "translateX(-100%)";
+    el.style.opacity = "0";
+  });
+
+  animatedTexts[index].style.transform = "translateX(0)";
+  animatedTexts[index].style.opacity = "1";
+
+  index = (index + 1) % animatedTexts.length;
+}
+
+// Inicia animación
+showNextText();
+setInterval(showNextText, 3500);
