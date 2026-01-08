@@ -67,3 +67,20 @@ function showNextText() {
 // Inicia animación
 showNextText();
 setInterval(showNextText, 4750);
+
+// Scroll reveal with stagger support
+const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.2,
+  rootMargin: '0px 0px -80px 0px'
+});
+
+animatedElements.forEach(el => observer.observe(el));
