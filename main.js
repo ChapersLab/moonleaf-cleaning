@@ -84,3 +84,48 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 animatedElements.forEach(el => observer.observe(el));
+
+
+/* =========================
+   START: TESTIMONIALS SCRIPT
+========================= */
+
+(function () {
+  const track = document.querySelector('.testimonials-track');
+  const cards = document.querySelectorAll('.testimonial-card');
+  const prev = document.querySelector('.testimonials-nav--prev');
+  const next = document.querySelector('.testimonials-nav--next');
+
+  let index = 0;
+
+  function cardsPerView() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+
+  function updateSlider() {
+    const cardWidth = cards[0].offsetWidth + 24;
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  next.addEventListener('click', () => {
+    if (index < cards.length - cardsPerView()) {
+      index++;
+      updateSlider();
+    }
+  });
+
+  prev.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener('resize', updateSlider);
+})();
+
+/* =========================
+   END: TESTIMONIALS SCRIPT
+========================= */
