@@ -431,8 +431,19 @@ small {
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 50%;
+    left: 57%;
     transform: translateX(-50%);
+    padding: 0.35rem 0.75rem;
+    font-size: 0.7rem;
+    border-radius: 5px;
+    gap: 0.3rem;
+    line-height: 0.2;
+  }
+
+  .btn-cta__icon svg,
+  .btn-cta__icon img {
+    width: 14px;
+    height: 14px;
   }
 
   .nav-cta-desktop {
@@ -467,6 +478,10 @@ small {
 
   .nav-menu a:hover {
     opacity: 0.85;
+  }
+
+  .navbar__logo img {
+    height: 64px;
   }
 }
 
