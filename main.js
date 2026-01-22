@@ -129,3 +129,44 @@ animatedElements.forEach(el => observer.observe(el));
 /* =========================
    END: TESTIMONIALS SCRIPT
 ========================= */
+
+/* ================================
+   START: Contact Section Script
+================================ */
+
+(function () {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
+
+  const success = form.querySelector('.contact-form__success');
+  const error = form.querySelector('.contact-form__error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.getAttribute('action') || '/', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        success.style.display = 'block';
+        error.style.display = 'none';
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      success.style.display = 'none';
+      error.style.display = 'block';
+    }
+  });
+})();
+
+/* ================================
+   END: Contact Section Script
+================================ */
